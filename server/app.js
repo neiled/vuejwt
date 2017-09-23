@@ -1,8 +1,8 @@
-const Koa = require('koa')
-const app = new Koa()
-const jwt = require('koa-jwt')
-const cors = require('koa-cors')
-const session = require('koa-session')
+import Koa from 'koa'
+var app = new Koa()
+import jwt from 'koa-jwt'
+import cors from 'koa-cors'
+import session from 'koa-session'
 
 
 const serverOrigin = 'http://' + (process.env.WEB_URL || 'localhost:8080')
