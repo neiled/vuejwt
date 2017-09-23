@@ -4,6 +4,7 @@
     <h2>Welcome to Vue JWT Demo</h2>
     <ul>
       <li>Login to the application <router-link to="login">Login</router-link></li>
+      <li>Access the secure page <router-link to="Secure">here</router-link></li>
     </ul>
   </div>
 </template>
