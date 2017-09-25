@@ -1,11 +1,15 @@
+import axios from 'axios'
+
 export default {
   login () {
     console.log('auth.login - NEEDS CODE')
+    axios.defaults.headers.common['Authorization'] = auth.getAuthHeader()
   },
   logout () {
     console.log('auth.logout')
     localStorage.removeItem('id_token')
     this.authenticated = false
+    axios.defaults.headers.common['Authorization'] = auth.getAuthHeader()
   },
   checkAuth () {
     console.log('auth.checkAuth')
