@@ -1,7 +1,7 @@
 import Koa from 'koa'
 var app = new Koa()
 import jwt from 'koa-jwt'
-import cors from 'koa-cors'
+import cors from 'kcors'
 import session from 'koa-session'
 
 
@@ -33,3 +33,4 @@ app.use(function(ctx){
   }
 });
 
+export default app
