@@ -23,7 +23,12 @@
 
 <script>
   export default{
-
+    methods: {
+      submit: async function () {
+        await auth.login(this, credentials)
+        await this.$emit('login')
+      }
+    }
   }
 </script>
 <style scoped>
