@@ -8,6 +8,7 @@
     "dev": "node -r babel-register server.js"
   },
   "dependencies": {
+    "jsonwebtoken": "^8.0.1",
     "kcors": "^2.2.1",
     "koa": "^2.3.0",
     "koa-jwt": "^3.2.2",

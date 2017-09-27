@@ -1,9 +1,14 @@
 import axios from 'axios'
+const LOGIN_URL = process.env.API_URL + 'auth/login'
+
 
 export default {
-  login () {
-    console.log('auth.login - NEEDS CODE')
+  async login (creds) {
+    console.log('auth.login')
+    let data = await axios.post(LOGIN_URL, creds)
+    localStorage.setItem('id_token', data.data.token)
     axios.defaults.headers.common['Authorization'] = this.getAuthHeader()
+    console.log('auth.login - done')
   },
   logout () {
     console.log('auth.logout')
