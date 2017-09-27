@@ -16,7 +16,7 @@ export default {
     return !!localStorage.getItem('id_token')
   },
   getAuthHeader () {
-    console.log('auth.getAuthHeader');
+    console.log('auth.getAuthHeader')
     var token = localStorage.getItem('id_token')
     if (token != null) {
       console.log('auth.getAuthHeader - adding token')
