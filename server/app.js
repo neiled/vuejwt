@@ -3,6 +3,7 @@ var app = new Koa()
 import jwt from 'koa-jwt'
 import cors from 'kcors'
 import session from 'koa-session'
+import sessionRouter from './routes/session'
 
 
 const serverOrigin = 'http://' + (process.env.WEB_URL || 'localhost:8080')
@@ -11,6 +12,9 @@ const origin = {origin: serverOrigin}
 app.use(cors(origin))
 app.use(session(app))
 
+app
+  .use(sessionRouter.routes())
+  .use(sessionRouter.allowedMethods())
 
 app.use(function(ctx, next){
   return next().catch((err) => {
