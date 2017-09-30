@@ -37,7 +37,7 @@
       submit: async function () {
         console.log('submitting form')
         await auth.login(this.credentials)
-        await this.$emit('login')
+        this.$router.push({name: 'Secure'})
       }
     }
   }

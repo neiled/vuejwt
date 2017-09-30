@@ -31,9 +31,11 @@ const router = new Router({
 
 router.beforeEach((to, from, next) => {
     if (to.meta.requiresAuth && !auth.isAuthorised()) {
-        next({name: 'home'})
+        next({name: 'Hello'})
     }
+  else {
     next()
+  }
 })
 
 
