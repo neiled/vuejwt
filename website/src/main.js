@@ -8,11 +8,13 @@ import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 import auth from './lib/auth'
 import axios from 'axios'
+import Toasted from 'vue-toasted'
 
 Vue.prototype.$http = axios
 axios.defaults.headers.common['Authorization'] = auth.getAuthHeader()
 
 Vue.use(BootstrapVue)
+Vue.use(Toasted)
 
 Vue.config.productionTip = false
 

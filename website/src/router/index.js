@@ -31,6 +31,7 @@ const router = new Router({
 
 router.beforeEach((to, from, next) => {
     if (to.meta.requiresAuth && !auth.isAuthorised()) {
+        Vue.toasted.show('Authentication required')
         next({name: 'Hello'})
     }
   else {
