@@ -7,7 +7,8 @@ export default {
   async login (creds) {
     console.log('auth.login: '+ LOGIN_URL)
     let data = await axios.post(LOGIN_URL, creds)
-    localStorage.setItem('id_token', data.data.token)
+    console.log(data)
+    localStorage.setItem('id_token', data.data.accessToken)
     axios.defaults.headers.common['Authorization'] = this.getAuthHeader()
     console.log('auth.login - done')
   },
@@ -17,9 +18,11 @@ export default {
     this.authenticated = false
     axios.defaults.headers.common['Authorization'] = this.getAuthHeader()
   },
-  checkAuth () {
+  isAuthorised () {
     console.log('auth.checkAuth')
-    return !!localStorage.getItem('id_token')
+    let authorised = !!localStorage.getItem('id_token')
+    console.log(authorised)
+    return authorised
   },
   getAuthHeader () {
     console.log('auth.getAuthHeader')

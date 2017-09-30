@@ -3,10 +3,11 @@ import Router from 'vue-router'
 import Hello from '@/components/Hello'
 import Login from '@/components/Login'
 import Secure from '@/components/Secure'
+import auth from '../lib/auth'
 
 Vue.use(Router)
 
-export default new Router({
+const router = new Router({
   routes: [
     {
       path: '/',
@@ -21,7 +22,19 @@ export default new Router({
     {
       path: '/Secure',
       name: 'Secure',
-      component: Secure
+      component: Secure,
+      meta: {requiresAuth: true}
     }
   ]
 })
+
+
+router.beforeEach((to, from, next) => {
+    if (to.meta.requiresAuth && !auth.isAuthorised()) {
+        next({name: 'home'})
+    }
+    next()
+})
+
+
+export default router
