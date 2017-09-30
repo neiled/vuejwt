@@ -10,13 +10,6 @@ class UserController {
         let refreshTokenData = {
             username: 'username',
             refreshToken: new rand(/[a-zA-Z0-9_-]{64,64}/).gen(),
-            info:
-                ctx.userAgent.os +
-                ' ' +
-                ctx.userAgent.platform +
-                ' ' +
-                ctx.userAgent.browser,
-            ipAddress: ctx.request.ip,
             expiration: dateAddMonths(new Date(), 1),
         }
 
