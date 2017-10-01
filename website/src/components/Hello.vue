@@ -1,7 +1,6 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
-    <h2>Welcome to Vue JWT Demo</h2>
     <h3 v-if='authenticated'>You are currently logged in</h3>
     <h3 v-if='!authenticated'>You are currently logged out</h3>
     <ul>
@@ -19,7 +18,7 @@ export default {
   data () {
     return {
       authenticated: auth.isAuthorised(),
-      msg: 'Welcome to Your Vue.js App'
+      msg: 'Welcome to Vue JWT Demo'
     }
   },
   mounted: () => {

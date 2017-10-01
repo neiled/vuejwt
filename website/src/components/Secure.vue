@@ -8,8 +8,39 @@
 </template>
 
 <script>
-  export default{
+  import auth from '../lib/auth'
+  const url = require('url')
+  const TEST_URL = url.resolve(process.env.API_URL,'auth/test')
 
+  export default{
+    data () {
+      return {
+        polls: []
+      }
+    },
+    created () {
+      this.fetchData()
+    },
+    methods: {
+      fetchData: async function () {
+        try {
+          console.log('getting data')
+          if (!auth.isAuthorised()) {
+            this.polls = []
+            console.log('set empty data')
+          } else {
+            console.log('setting polls data')
+            var polls = await this.$http.get(TEST_URL)
+            console.log(polls.data)
+            this.polls = polls.data
+            console.log('set polls data')
+          }
+        } catch (e) {
+          console.log(e)
+        } finally {
+        }
+      }
+    }
   }
 </script>
 <style scoped>

@@ -7,4 +7,10 @@ router.post('/login', async function (ctx) {
   await userController.authenticate(ctx)
 })
 
+router.get('/test', async function (ctx) {
+  console.log('test api')
+  console.log(ctx.state.user)
+  ctx.body = 'test api ok'
+})
+
 export default router
