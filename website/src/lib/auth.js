@@ -1,6 +1,6 @@
 import axios from 'axios'
 const url = require('url')
-const LOGIN_URL = url.resolve(process.env.API_URL,'auth/login')
+const LOGIN_URL = url.resolve(process.env.API_URL || 'http://localhost:8080','auth/login')
 
 
 export default {

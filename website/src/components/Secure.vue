@@ -10,7 +10,7 @@
 <script>
   import auth from '../lib/auth'
   const url = require('url')
-  const TEST_URL = url.resolve(process.env.API_URL,'auth/test')
+  const TEST_URL = url.resolve(process.env.API_URL || 'http://localhost:3000','auth/test')
 
   export default{
     data () {

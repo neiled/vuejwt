@@ -1,32 +1,9 @@
 {
   "env": {
-    "mocha": true,
-    "jasmine": true
-  },
-  "plugins": [
-    "mocha",
-    "chai-expect"
-  ],
-  "rules": {
-    "no-unused-expressions": 0,
-
-    "mocha/no-exclusive-tests": [2],
-    "mocha/no-pending-tests": [2],
-    "mocha/handle-done-callback": [2],
-    "mocha/no-global-tests": [2],
-
-    "chai-expect/missing-assertion": [2],
-    "chai-expect/terminating-properties": [2],
-    "chai-expect/no-inner-compare": [2]
+    "mocha": true
   },
   "globals": {
-    "$": true,
-    "$$": true,
-    "browser": false,
-    "browserA": false,
-    "browserB": false,
-    "mock": false,
-    "sinon": false,
-    "assert": false,
+    "expect": true,
+    "sinon": true
   }
 }

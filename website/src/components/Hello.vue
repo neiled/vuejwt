@@ -15,15 +15,20 @@
 import auth from '../lib/auth'
 export default {
   name: 'hello',
-  data () {
-    return {
-      authenticated: auth.isAuthorised(),
-      msg: 'Welcome to Vue JWT Demo'
+  props: {
+    msg: {
+      type: String,
+      default: 'Welcome to Vue JWT Demo'
     }
   },
-  mounted: () => {
-    this.authenticated = auth.isAuthorised()
+  data: function () {
+    return {
+      authenticated: false,
+    }
   },
+  // mounted: () => {
+  //   this.authenticated = auth.isAuthorised()
+  // },
   methods: {
     logout: function () {
       auth.logout()
